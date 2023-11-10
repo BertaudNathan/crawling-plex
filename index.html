@@ -4,15 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barre de Recherche</title>
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
-    <h1>Recherche un film</h1> 
-    <form method="post" action="/">
-    <div class="search-bar">      
-        <input type="text" name="input" class="search-input" placeholder="Rechercher...">
-        <button class="search-button" type="submit">Rechercher</button>
+    <h1>Rechercher un film</h1>
+    <div class="search-bar">
+        <input type="text" id="searchInput" class="search-input" placeholder="Rechercher...">
+        <button class="search-button">Rechercher</button>
     </div>
-</form>
+    <div class="tete">
+        <img src="static/Tete.png" alt="">
+    </div>
+    <div class="bouche">
+        <h1>d</h1>
+    </div>
+    <div class="bouche1">
+        <h1>d</h1>
+    </div>
+    <div class="bouche2">
+        <h1>d</h1>
+    </div>
 </body>
+<script>
+        document.getElementById('searchInput').addEventListener('input', function() {
+            let inputValue = this.value.trim();
+            if (inputValue === "") {
+                document.querySelector('.bouche').style.top = "42%";
+                document.querySelector('.bouche1').style.top = "42%";
+            } else {
+                document.querySelector('.bouche').style.top = "40%";
+                document.querySelector('.bouche1').style.top = "40%";
+            }
+        });
+</script>
 </html>
