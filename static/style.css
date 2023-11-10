@@ -8,7 +8,7 @@ body {
     height: 80vh;
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    background-image: url("Background.png");
+    background-image: url("assets/bg.png");
 }
 
 h1 {
@@ -38,4 +38,58 @@ h1 {
     border: none;
     padding: 10px;
     cursor: pointer;
+}
+
+.tete {
+    position: absolute;
+    left: 15%;
+    top: 20%;
+}
+
+.tete h1 {
+    display: none;
+}
+
+.bouche {
+    position: absolute;
+    left: 20%;
+    top: 42%;
+    background-color: white;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    transition: top 0.4s ease;
+}
+
+.bouche h1 {
+    display: none;
+}
+
+.bouche1 {
+    position: absolute;
+    left: 23%;
+    top: 42%;
+    background-color: white;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    transition: top 0.4s ease;
+}
+
+.bouche1 h1 {
+    display: none;
+}
+
+.bouche2 {
+    position: absolute;
+    left: 21.2%;
+    top: 40%;
+    background-color: white;
+    height: 65px;
+    width: 65px;
+    border-radius: 100%;
+}
+
+.bouche2 h1 {
+    display: none;
 }
