@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Rechercher un film</h1>
-    <form method="post" action="/">
+    <form id="searchForm" method="post" action="/">
     <div class="search-bar">
         <input name="searchinput" type="text" id="searchInput" class="search-input" placeholder="Rechercher...">
         <button class="search-button">Rechercher</button>
@@ -26,6 +26,9 @@
     <div class="bouche2">
         <h1>d</h1>
     </div>
+    <div class="message">
+        <h2 style="display: none;">Merci de patienter entre 5 et 10 minutes avant de pouvoir streamer un max !</h2>
+    </div>
 </body>
 <script>
         document.getElementById('searchInput').addEventListener('input', function() {
@@ -37,6 +40,11 @@
                 document.querySelector('.bouche').style.top = "40%";
                 document.querySelector('.bouche1').style.top = "40%";
             }
+        });
+
+        document.getElementById('searchForm').addEventListener('submit', function(event) {
+            var messageH2 = document.querySelector('.message h2');
+            messageH2.style.display = 'block';
         });
 </script>
 </html>

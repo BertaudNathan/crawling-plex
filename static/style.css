@@ -17,6 +17,12 @@ h1 {
     color: #4CAF50;
 }
 
+h2 {
+    margin-top: 10px;
+    font-size: 2vh;
+    color: #4CAF50;
+}
+
 .search-bar {
     display: flex;
     width: 600px;
