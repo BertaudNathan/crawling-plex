@@ -14,9 +14,10 @@ func SearchHandler(w http.ResponseWriter, r *http.Request) {
 		panic(err)
 	}
 
-	input := r.FormValue("input")
+	input := r.FormValue("searchinput")
+	fmt.Print(input)
 	if input != "" {
-		cmd := exec.Command("crawler.py " + input)
+		cmd := exec.Command("python", "C:/Users/remi_/Desktop/GitLinux/crawling-plex/crawler.py")
 		out, err := cmd.CombinedOutput()
 		if err != nil {
 			fmt.Println(err)
