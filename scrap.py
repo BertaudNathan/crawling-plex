@@ -17,6 +17,7 @@ browser.get('https://thepiratebay.org/index.html')
 
 search_bar = browser.find_element(By.CSS_SELECTOR, "input")
 arguments = sys.argv[1:]
+print(arguments + " python")
 search_bar.send_keys(arguments)
 search_bar.send_keys(Keys.ENTER)
 
