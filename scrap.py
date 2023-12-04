@@ -1,3 +1,4 @@
+import sys
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -12,15 +13,10 @@ options = Options()
 options.headless = True
 
 browser = webdriver.Chrome(options=options)
-
-browser.get('https://thepiratebay.org/index.html')
+Movies = sys.argv[1]
+browser.get('https://thepiratebay.org/search.php?q=' + Movies + '&cat=207')
 
 search_bar = browser.find_element(By.CSS_SELECTOR, "input")
-search_bar.send_keys("interstellar")
-search_bar.send_keys(Keys.ENTER)
-
-wait = WebDriverWait(browser, 7)
-
 
 time.sleep(1)
 
@@ -30,8 +26,6 @@ soup = BeautifulSoup(html, 'html.parser')
 links = browser.find_elements(By.CSS_SELECTOR, 'a')
 size = soup.find('span', class_="list-item item-size")
 print(size.text)
-
-    
     
 count = 0
 
@@ -51,8 +45,7 @@ for link in links:
             else:
                 continue
         else :
-         break
-
+            break
 browser.quit()
 
 browser = webdriver.Chrome(options=options)
@@ -65,5 +58,6 @@ for a in soup.find_all('a', href=True):
     if "magnet" in a['href']:
         print (a['href'])
         break
+    
 
 browser.quit()
