@@ -10,7 +10,7 @@ import requests
 import time
 
 options = Options()
-options.headless = True
+options.add_argument("--headless=new")
 
 browser = webdriver.Chrome(options=options)
 Movies = sys.argv[1]
